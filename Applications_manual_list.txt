@@ -1,0 +1,22 @@
+Blackmagic Proxy Generator.app
+Brave Browser.app
+DaVinci Resolve
+Discord.app
+Ghostty.app
+Google Chrome.app
+HHKB
+hhkb-keymap-tool.app
+Mattermost.app
+Microsoft Defender Shim.app
+Microsoft Excel.app
+Microsoft OneNote.app
+Microsoft Outlook.app
+Microsoft PowerPoint.app
+Microsoft Word.app
+Notion.app
+OneDrive.app
+Raspberry Pi Imager.app
+Safari.app
+Spotify.app
+Utilities
+zoom.us.app

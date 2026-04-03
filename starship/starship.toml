@@ -1,0 +1,28 @@
+# スタイルを「無機質」に固定
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$nodejs\
+$character"""
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[character]
+success_symbol = "[❯](bold white)"
+error_symbol = "[❯](bold red)"
+
+[python]
+format = " via [ $version](bold yellow) "
+
+[nodejs]
+format = " via [󰎙 $version](bold green) "
+
+# Conda環境を表示させたい時だけ小さく出す（(base)は出さない）
+[conda]
+ignore_base = true
+format = " [$symbol$environment] "

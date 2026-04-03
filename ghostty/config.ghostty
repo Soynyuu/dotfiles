@@ -1,0 +1,31 @@
+font-family='PlemolJPConsoleNF'
+
+font-size = 14
+# Ghosttyではline-heightではなくこちらを使います
+
+# ==========================================
+# Industrial & Zorin Design
+# ==========================================
+# システムのライト/ダークに完全連動
+theme = light:industrial-light, dark:industrial-dark
+
+# Zorin OSのような「深いボケ」を伴う透明感
+background-opacity = 0.85
+background-blur-radius = 40
+
+# ==========================================
+# Dieter Rams Philosophy (機能美)
+# ==========================================
+# 余白を広めに取り、文字を「置く」感覚にする
+window-padding-x = 24
+window-padding-y = 24
+
+# 余計なバーを排除し、コンテンツを主役にする
+macos-titlebar-style = transparent
+
+# ==========================================
+# Functional Details
+# ==========================================
+cursor-style = block
+cursor-style-blink = true
+macos-option-as-alt = true
