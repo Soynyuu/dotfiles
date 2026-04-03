@@ -1,0 +1,18 @@
+```text
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Sensitive (もし個別に秘匿情報を持つ場合)
+.env
+.ssh/
