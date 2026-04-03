@@ -1,28 +1,42 @@
-# 🏛️ My Industrial Mac Architecture (Event-Driven)
+# 🏛️ Industrial Architecture Environment (Event-Driven)
 
-山本理顕の「透明性」とディーター・ラムスの「機能美」を融合させ、macOSネイティブの `launchd` による完全イベント駆動バックアップを実現した、究極の開発環境。
+macOSのネイティブ機能を用いた「完全イベント駆動バックアップ」を実現した、インフラストラクチャ・アズ・コード (IaC) の極致。
+建築的な「空間の透明性」と、工業デザインの「機能美」を融合させ、最小限のノイズで最大のパフォーマンスを発揮する開発環境です。
 
-## 🎨 Design Philosophy
-- **Architecture (Riken Yamamoto)**: ガラスのような透明感と、境界線のない空間設計。
-- **Industrial (Dieter Rams)**: 「Less, but better」。無彩色ベースにオレンジの機能的アクセント。
-- **Zorin OS Essence**: 深いボケ（Blur）を伴うフロストガラスのような質感。
+## 🎨 Design Philosophy (設計の美学)
 
-## 🚀 Tech Stack
-- **Terminal**: [Ghostty](https://ghostty.org/) (GPU Accelerated / Zig)
-- **Shell**: Zsh + [Starship](https://starship.rs/)
-- **Node.js**: `fnm` + `pnpm` (Fast & Efficient)
-- **Python**: `Miniforge` + `uv` (Hybrid Conda/Rust-pip)
-- **Library**: OpenCASCADE, FastAPI, etc.
+特定の様式に依存せず、普遍的な「使いやすさ」と「美しさ」を追求しています。
 
-## 🤖 Automation (The Engine)
-`launchd` が以下のイベントを常時監視し、変更があった瞬間に GitHub へ自動同期します。
-- **Config**: `.zshrc`, `starship.toml`, `config.ghostty`
-- **Apps**: `/Applications`, `/opt/homebrew/Caskroom` (GUI/CLIアプリの増減)
+- **Architectural Minimalism**: 境界線のない透明感。タイトルバーを排除し、深いボケ（Blur）効果によってデスクトップ環境とシームレスに調和。
+- **Industrial Functionalism**: 「より少なく、しかしより良く」。無彩色ベースのテーマに、機能的アクセントカラー（Orange）を配置。
+- **Universal Glass-morphism**: 磨りガラスのような質感を伴う、硬質でモダンなインターフェース。
 
-## 🛠️ Setup
-1. **Homebrew**: `brew bundle` を実行して全アプリを復元。
-2. **Setup Script**: `~/setup_dotfiles.sh` を配置。
-3. **LaunchAgent**: `com.mote.dotfiles.plist` をロード。
+## 🏗️ The Stack (技術スタック)
+
+| Layer | Technology | Key Features |
+| :--- | :--- | :--- |
+| **Terminal** | `Ghostty` | GPUレンダリングによる高速描画と高いカスタマイズ性。 |
+| **Shell** | `Zsh` + `Starship` | 最小限のコンテキストのみを提示するミニマルなUI。 |
+| **Node.js** | `fnm` + `pnpm` | Rust製マネージャーによる高速なバージョン管理と効率的なディスク利用。 |
+| **Python** | `Miniforge` + `uv` | バイナリ依存の隔離と、Rust製ツールによる爆速なパッケージ管理のハイブリッド。 |
+| **Infra** | `Homebrew` + `mas` | 全てのCLI、GUIアプリ、Storeアプリをコードで統制。 |
+
+## 🔄 Zero-Touch Maintenance (イベント駆動同期)
+
+`launchd` がシステムの状態を監視し、以下の変更を検知した瞬間に GitHub へ同期します。
+
+1. **設定の更新**: `.zshrc`, `starship.toml`, 設定ファイルの保存時。
+2. **アプリの増減**: アプリケーションフォルダ、またはパッケージマネージャーの管理下で構成が変化した時。
+
+## 🛠️ Setup & Restore
 
 ```bash
-launchctl load ~/Library/LaunchAgents/com.mote.dotfiles.plist
+# 1. リポジトリの取得
+git clone <your-repo-url> ~/dotfiles
+cd ~/dotfiles
+
+# 2. 全アプリと構成の復元
+brew bundle
+
+# 3. 同期エンジンの起動
+launchctl load ~/Library/LaunchAgents/com.env.sync.plist
